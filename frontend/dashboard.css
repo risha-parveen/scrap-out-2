@@ -1,0 +1,171 @@
+html{
+  min-height:100%;
+  width:100%;
+}
+
+body{
+  width:100%;
+  min-height: 100%;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+
+.header{
+  height:80px;
+  background-color:rgb(233, 233, 233);
+  width:100%;
+  position:absolute;
+  top:0;
+  display:flex;
+  flex-direction: row;
+}
+
+#scrapout-tag{
+  margin-right:auto;
+  font-size: 2rem;
+  font-family: monospace;
+  font-weight: bolder;
+  margin:20px auto 40px 70px;
+}
+
+.link-container{
+  margin-right:50px;
+}
+
+#home,
+#account,
+#logout{
+  display:inline-block;
+  margin:30px 20px 50px 0;
+  font-size:1rem;
+  font-family:monospace;
+  font-weight: bold;
+}
+
+#home{
+  margin-right:40px;
+}
+
+#logout{
+  padding:5px 10px;
+}
+
+.container-wrapper{
+  width:100%;
+  height:calc(100vh - 80px);
+  position:absolute;
+  top:80px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  width:80%;
+  height:100%;
+  background-color:transparent;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar{
+  width:500px;
+  background-color: white;
+  height:50px;
+  border:1px solid black;
+  border-radius:10px;
+  margin:30px;
+}
+
+.search-field{
+  border:none;
+  width:calc(100% - 65px);
+  height:calc(100% - 5px);
+  padding:0;
+  margin:5px;
+  background-color: transparent;
+  border-radius:10px;
+  font-size: 1.2rem;
+  padding:0 0 0 5px;
+  position: relative;
+  top:-5px;
+}
+
+.search-field::placeholder{
+  font-size: 1.2rem;
+}
+
+.search-field:focus{
+  border:none;
+  outline:none;
+}
+
+#search-icon{
+  font-size: 2.1rem;
+  position:relative;
+  top:8px;
+  cursor:pointer;
+}
+
+.category-tag{
+  position:relative;
+  font-size:1.5rem;
+  font-family:monospace;
+  font-weight: bold;
+}
+
+.line{
+  width:100vw;
+  height:1px;
+  background-color:black;
+  margin:10px;
+  position:relative;
+  top:-20px;
+}
+
+.category{
+  height:180px;
+  margin-top:30px;
+}
+
+.category-tile{
+  height:100%;
+  border:3px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.category-tile:hover{
+  transform:scale(0.97);
+  border:3px solid green;
+  box-shadow: 2px 2px 10px rgb(109, 109, 109);
+}
+
+.grid-container{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:5rem;
+}
+
+img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius:10px;
+}
+
+.category-tile-tag{
+  font-size:1.5rem;
+  margin-top:5px;
+  font-family:monospace;
+  font-weight: bold;
+  text-align: center;
+}
+
+.category-tile-tag:hover{
+  transform: scale(1.09);
+  cursor:pointer;
+}
