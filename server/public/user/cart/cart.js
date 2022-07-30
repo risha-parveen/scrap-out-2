@@ -19,7 +19,7 @@ const renderData=async()=>{
     productNode=`
       <div class="product-details">
         <div class="container-img">
-            <img class="product-img" src="images/paper.png">
+            <img class="product-img" src="../../images/paper.png">
         </div>
         <div class="product-text">
             <p id="item-title">${currentKey}</p>
@@ -73,7 +73,7 @@ const checkLocalStorage=()=>{
   if(token){
     renderData()
   }else{
-    window.location.href="index.html"
+    window.location.href="http://localhost:5000/index.html"
   }
 }
 

@@ -3,7 +3,7 @@ home_button=document.getElementById('home')
 
 logout_button.addEventListener('click',()=>{
   localStorage.clear()
-  window.location.href="index.html"
+  window.location.href="http://localhost:5000/index.html"
 })
 
 home_button.addEventListener('click',()=>{

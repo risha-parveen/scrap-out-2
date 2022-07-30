@@ -18,7 +18,7 @@ let count=0
 let Totalprice=0
 
 //viewCartButton.addEventListener('click',()=>{
-//  window.location.href="cart.html"
+//  window.location.href="http://localhost:5000/user/cart/cart.html"
 //})
 
 
@@ -147,7 +147,7 @@ const renderData=async(shop,shopProducts)=>{
       <div class="product-details">
         <div class="category-head">
           <div class="container-img">
-            <img class="product-img" src="images/${mapPicturesToCategory(category)}">
+            <img class="product-img" src="../../images/${mapPicturesToCategory(category)}">
           </div>
           <div class="product-text">
             <p id="${category}" class="item-title">${category}</p>
@@ -173,7 +173,7 @@ const renderData=async(shop,shopProducts)=>{
       </div>
   `
   productWrapper.lastElementChild.lastElementChild.lastElementChild.addEventListener('click',()=>{
-    window.location.href="cart.html"
+    window.location.href="http://localhost:5000/user/cart/cart.html"
   })
 
   //expansionEventListener()
@@ -184,7 +184,7 @@ const renderData=async(shop,shopProducts)=>{
 const checkLocalStorage=async()=>{
   token=localStorage.getItem("token")
   if(!token){
-    window.location.href="index.html"
+    window.location.href="http:5000/localhost/index.html"
   }
   current_category=localStorage.getItem('current_category')
   current_id=localStorage.getItem('current_id')

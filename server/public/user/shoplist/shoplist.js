@@ -10,7 +10,7 @@ const addEventListenerForBoxes=()=>{
     box[i].addEventListener('click',()=>{
       localStorage.removeItem('current_id')
       localStorage.setItem('current_id',box[i].id)
-      const url=new URL(`http://localhost:5000/shop.html?category=${current_category}`)
+      const url=new URL(`http://localhost:5000/user/shop/shop.html?category=${current_category}`)
       url.searchParams.delete('id')
       url.searchParams.append('id',box[i].id)
       const newUrl=url.toString()
@@ -33,7 +33,7 @@ const renderData=(shop,shopInfo)=>{
   
   let boxNode=`
       <div class="box" id="${shop._id}">
-        <img src="images/shopPic.jpeg" alt=""/>
+        <img src="../../images/shopPic.jpeg" alt=""/>
         <ul class="shop-details">
             <li><h3>${shopInfo.shopname}</h3></li>
             <li>${current_category}</li>
@@ -51,7 +51,7 @@ const clickingCategoryToShop=async()=>{
   try{
     let response=await getSelectedProduct({selected:params.get('category')},token)
     if(response.success===false && response.message==='invalid token')
-      window.location.href="index.html"
+      window.location.href="http://localhost:5000/index.html"
 
     for(let shop=0;shop<response.length;shop++){
       try{
@@ -70,7 +70,7 @@ const clickingCategoryToShop=async()=>{
 const checkLocalStorage=()=>{
   token=localStorage.getItem("token")
   if(!token){
-    window.location.href="index.html"
+    window.location.href="http://localhost:5000/index.html"
   }
   params=new URLSearchParams(window.location.search)
   current_category=params.get('category')
