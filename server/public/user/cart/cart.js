@@ -1,10 +1,15 @@
 cartContainer=document.getElementById('cart-container')
 cartWrapper=document.getElementsByClassName('cart-wrapper')
+chooseDate=document.getElementById('chooseDate')
+buttonCart=document.getElementsByClassName('button-cart')
 
 let token=null
+let selectedDate=null
 
 console.log(cartWrapper[0])
 cartContainer=cartWrapper[0].firstElementChild
+
+
 
 const renderData=async()=>{
   let Totalprice=0
@@ -38,9 +43,6 @@ const renderData=async()=>{
       <div class="cart-details">
         <p>Grand Total: ${Totalprice} Rs</p>
       </div>
-      <div class="button-container" id="bookSlot-container">
-        <button class="button-cart">Book a slot</button>
-      </div>
     </div>
   `
   cartContainer.innerHTML+=summaryNode
@@ -57,15 +59,21 @@ const renderData=async()=>{
     </div>
   `
   cartContainer.innerHTML+=confirmNode
-  const confirmButton=document.getElementById('confirm-button')
-  let date=document.getElementById('chooseDate')
 
-  confirmButton.addEventListener('click',()=>{
-    console.log(date.value)
-  })
-
+  confirmButton=buttonCart[0]
   
-  console.log()
+  confirmButton.addEventListener('click',()=>{
+    selectedDate=confirmButton.parentNode.parentNode.firstElementChild.lastElementChild.value
+    today = new Date();
+    dd = String(today.getDate()).padStart(2, '0');
+    mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    yyyy = today.getFullYear();
+    today=yyyy+'-'+mm+'-'+dd
+    if(selectedDate!=='' && selectedDate>=today){
+      confirmButton.innerHTML='Confirmed!'
+      alert('Your order has been confirmed.\nWe will notify you when your slot is booked')
+    }
+  })
 }
 
 const checkLocalStorage=()=>{
