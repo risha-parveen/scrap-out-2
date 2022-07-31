@@ -7,6 +7,6 @@ logout_button.addEventListener('click',()=>{
 })
 
 home_button.addEventListener('click',()=>{
-    window.location.href="dashboard.html"
+    window.location.href="http://localhost:5000/user/dashboard/dashboard.html"
 })
 

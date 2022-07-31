@@ -1,3 +1,4 @@
+
 cartContainer=document.getElementById('cart-container')
 cartWrapper=document.getElementsByClassName('cart-wrapper')
 chooseDate=document.getElementById('chooseDate')
@@ -36,8 +37,6 @@ const renderData=async()=>{
     
   }
 
-  
-
   summaryNode=`
     <div class="product-details" id="product-cart">
       <div class="cart-details">
@@ -62,7 +61,7 @@ const renderData=async()=>{
 
   confirmButton=buttonCart[0]
   
-  confirmButton.addEventListener('click',()=>{
+  confirmButton.addEventListener('click',async()=>{
     selectedDate=confirmButton.parentNode.parentNode.firstElementChild.lastElementChild.value
     today = new Date();
     dd = String(today.getDate()).padStart(2, '0');
@@ -75,10 +74,24 @@ const renderData=async()=>{
     else if(selectedDate!=='' && selectedDate<today){
       alert('not possible to select days before today')
     }
+    contents={
+      date:selectedDate,
+    }
     if(selectedDate!=='' && selectedDate>=today){
-      
-      confirmButton.innerHTML='Confirmed!'
-      alert('Your order has been confirmed. We will notify you when your slot is booked')
+      try{
+        response=await confirmOrder(contents,token)
+          if(response.success===true){
+            window.location.href="http://localhost:5000/user/summary/summary.html"
+            alert('Your order has been confirmed. We will notify you when your slot is booked')
+            
+          }
+          else{
+            alert('Something went wrong. Try again ')
+          }
+        }
+      catch(err){
+        console.log(err)
+      }
     }
   })
 }
@@ -108,6 +121,25 @@ const getOrderDetails=async (token)=>{
   }
   catch(e){
     console.log(e)
+  }
+}
+
+const confirmOrder=async(contents,token)=>{
+  try{
+    const response=await fetch('/user/post/confirm_order',{
+      method:'POST',
+        headers:{
+            'Accept':'application/json',
+            'Content-Type':'application/json',
+            'Authorization':'Bearer '+token
+        },
+        body:JSON.stringify(contents)
+    })
+    const result=await response.json()
+    console.log(result)
+    return result
+  }catch(err){
+    console.log(err)
   }
 }
 

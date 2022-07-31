@@ -80,16 +80,22 @@ router.post('/edit_order',auth,async(req,res)=>{
 
 router.post('/confirm_order',auth,async(req,res)=>{
   username=req.user.username
+  date=req.body.date 
   try{
     result=await order_db.find({username:req.user.username})
     shopname=result[0].shopname
     try{
       list_result=await list_db.find({shopname:shopname})
       items=result[0].items
-      list_result[0].orders.push({})
+      console.log(items.push({'confirm':false, 'date':date}))
+      console.log(items)
       list_result[0].orders[0][username]=items
       inserted=await list_db.replaceOne({shopname:shopname},list_result[0])
       console.log(inserted)
+      res.status(200).send({
+        action:"confirmed order successfully",
+        success:true
+      })
     }catch(err){
       console.log(err)
       res.status(500).send({

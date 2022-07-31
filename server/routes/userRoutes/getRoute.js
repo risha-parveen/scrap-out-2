@@ -116,4 +116,27 @@ router.post('/get_selected_collector',auth,async(req,res)=>{
   }
 })
 
+router.post('/get_confirmation',auth,async(req,res)=>{
+  username=req.user.username
+  shopname=req.body.shopname
+  try{
+    result=await list_db.find({shopname:shopname})
+    currentOrders=result[0].orders
+    for(let i in currentOrders){
+      currentUser=Object.keys(currentOrders[i])[0]
+      if(currentUser===username){
+        details=currentOrders[i][currentUser].pop()
+        res.status(200).send(details)
+      }
+    }
+
+  }catch(err){
+    console.log(err)
+    res.status(500).send({
+      action:"failed to get information",
+      success:false
+    })
+  }
+})
+
 module.exports=router;
