@@ -78,6 +78,34 @@ router.post('/edit_order',auth,async(req,res)=>{
   }
 })
 
+router.post('/confirm_order',auth,async(req,res)=>{
+  username=req.user.username
+  try{
+    result=await order_db.find({username:req.user.username})
+    shopname=result[0].shopname
+    try{
+      list_result=await list_db.find({shopname:shopname})
+      items=result[0].items
+      list_result[0].orders.push({})
+      list_result[0].orders[0][username]=items
+      inserted=await list_db.replaceOne({shopname:shopname},list_result[0])
+      console.log(inserted)
+    }catch(err){
+      console.log(err)
+      res.status(500).send({
+        action:"cannot fetch list db item",
+        success:false
+      })
+    }
+  }catch(err){
+    console.log(err)
+    res.status(500).send({
+      action:"something went wrong",
+      success:false
+    })
+  }
+})
+
 
 
 module.exports=router;

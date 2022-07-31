@@ -6,9 +6,7 @@ const schema=mongoose.Schema({
       type:String,
       required:true
     },
-    "orders":[{
-      type:Object
-    }]
+    "orders":[]
 })
 
 module.exports=mongoose.model('list_db',schema)

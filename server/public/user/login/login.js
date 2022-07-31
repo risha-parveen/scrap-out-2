@@ -48,7 +48,7 @@ login_button.addEventListener('click',async(e)=>{
     const loginResponse=await logIn(data)
     if(loginResponse.success===true){
       localStorage.setItem("token",loginResponse.token)
-      window.location.href="http://scrapout.me/user/dashboard/dashboard.html"
+      window.location.href="http://localhost:5000/user/dashboard/dashboard.html"
     }
     else{
       console.log('error')
@@ -140,7 +140,7 @@ const logIn=async(contents)=>{
 const checkLocalStorage=async ()=>{
   token=localStorage.getItem("token")
   if(token){
-    window.location.href="http://scrapout.me/user/dashboard/dashboard.html"
+    window.location.href="http://localhost:5000/user/dashboard/dashboard.html"
   }
 }
 
