@@ -11,46 +11,59 @@ body{
   padding:0;
 }
 
-.header{
+.header {
   height:80px;
-  background-color:rgb(233, 233, 233);
   width:100%;
-  position:absolute;
-  top:0;
-  display:flex;
-  flex-direction: row;
-}
-
-#scrapout-tag{
-  margin-right:auto;
-  font-size: 2rem;
-  font-family: monospace;
-  font-weight: bolder;
-  margin:20px auto 40px 70px;
-}
-
-.link-container{
-  margin-right:50px;
-}
-
-#home,
-#account,
-#logout{
-  display:inline-block;
-  margin:30px 20px 50px 0;
-  font-size:1rem;
-  font-family:monospace;
-  font-weight: bold;
-}
-
-#home{
-  margin-right:40px;
-}
-
-#logout{
-  padding:5px 10px;
-}
-
+  background-color:#1c3738;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 70% 6% 9% 14%;
+  grid-column-gap: 10px;
+  justify-items: stretch;
+  align-items: stretch;
+  }
+  
+  #scrapout-tag-container { 
+      display: flex;
+      align-items: center;
+      grid-area: 1 / 1 / 2 / 2; 
+  }
+  #scrap-out-tag{
+      width: 180px;
+      object-fit: contain;
+  }
+  #home { 
+      display: flex;
+      align-items: center;
+      align-content: center;
+      grid-area: 1 / 2 / 2 / 3; 
+  }
+  #account { 
+      display: flex;
+      align-items: center;
+      align-content: center;
+      grid-area: 1 / 3 / 2 / 4; 
+  }
+  #home-link,#account-link{
+      font-size:1rem;
+      font-family:monospace;
+      font-weight: bold;
+      margin-left: 20px;
+  }
+  #logout { 
+      display: flex;
+      align-items: center;
+      grid-area: 1 / 4 / 2 / 5; 
+  }
+  #logout-button{
+      width: 100px;
+      height: 40px;
+      background-color: #D86997;
+      color: #ffffff;
+      border: 0;
+      border-radius: 10px;
+      font-weight: bold;
+  }
 #container-wrapper{
   width:100%;
   height:calc(100vh - 80px);
