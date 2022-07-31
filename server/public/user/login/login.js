@@ -110,16 +110,9 @@ const signUp=async (contents)=>{
         'Content-Type':'application/json',
       },
       body:JSON.stringify(contents)
-    }).then(async response=>{
-      if(response.ok){
-        response.json().then(json=>resolve(json))
-      }
-      else{
-        response.json().then(json=>reject(json))
-      }
-    }).catch(async error=>{
-      reject(error)
     })
+    const result=await response.json()
+    return result
   }
   catch(err){
     console.log(err)
