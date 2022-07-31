@@ -1,76 +1,123 @@
-<html>
-    <head>
-        <title>Scrap Out | collector order</title>
-        <link rel="stylesheet" type="text/css" href="orders.css">
-    </head>
-    <body>
-        <div class="bg">
-          <div class="header">
-            <div id="scrapout-tag-container">
-              <img id="scrap-out-tag" src="images/ScrapOut icon.png">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrapOut | collector account</title>
+  <link rel="stylesheet" type="text/css" href="orders.css">
+</head>
+
+<body>
+    <div class="main-container">
+      <div class="header">
+        <div id="scrapout-tag-container">
+          <img id="scrap-out-tag" src="../../images/ScrapOut icon.png">
+        </div>
+        <div class="link-container">
+          <p id="home">Home</p>
+          <p id="account">Account</p>
+          <button id="logout">Log Out</button>
+        </div>
+      </div>
+      </div> 
+    <div class="container-list">
+        <div class="boxes">
+          <div class="sort-box-wrapper">
+            <div class="sort-tools">
+              <h3 id="sort-by-head">Hello,NAME</h3>
+              <ul id="sort-category">
+                <li><a href="http://localhost:5000/collector/cAcnt/cAcnt.html" style="text-decoration: none; color:white"><p id="account-link">Account</p></a></li>
+                <li><a href="http://localhost:5000/collector/orders/orders.html" style="text-decoration: none; color:white"><p id="order-link">Orders</p></a></li>
+              </ul>
             </div>
-            <div class="link-container">
-              <p id="home">Home</p>
-              <p id="account">Account</p>
-              <button id="logout">Log Out</button>
-            </div>
-          </div>
-            <div class="container-list">
-                <div class="boxes">
-                  <div class="sort-box-wrapper">
-                    <div class="sort-tools">
-                      <h3 id="sort-by-head">Hello,NAME</h3>
-                      <ul id="sort-category">
-                        <li><a>---------</a></li>
-                        <li><p id="account-link">Account</p></li>
-                        <li><a>Your-orders</a></li>
-                      </ul>
-                    </div>
-                    <div class="box-wrapper">
-                      <div class="box-head">
-                        <h1 id="heading">Orders</h1><hr id="acnt-head">
-                      </div>
-                        <div class="box">
-                            <ul class="shop-details">
-                                <li><h3>orders to be confirmed</h3></li>
-                                <div class="smallbox" id="to-be-cnfm-orders">
-                                  <img src="shopPic.jpeg" alt=""/>
-                                  <ul class="shop-details">
-                                    <li>Name of shop</li>
-                                    <li>Price per kg</li>
-                                    <li>Rating</li>
-                                    <li>Location</li>
-                                    <button id="accept-btn">accept</button>
-                                    <button id="deny-btn">decline</button>
-                                  </ul>
-                                </div>
-                                
-                                <li><h3>confirmed orders</h3></li>
-                                <div class="smallbox">
-                                  <img src="image.png" alt=""/>
-                                  <ul class="shop-details">
-                                      <li>Name of shop</li>
-                                      <li>Price per kg</li>
-                                      <li>Rating</li>
-                                      <li>Location</li>
-                                  </ul>
-                                </div>
-                                <div class="smallbox">
-                                  <img src="media/img/shop3.jpeg" alt=""/>
-                                  <ul class="shop-details">
-                                      <li>Abbas Metal Trading</li>
-                                      <li>Price per kg</li>
-                                      <li>Rating</li>
-                                      <li>Darshanpura,Banglore</li>
-                                  </ul>
-                              </div>
-                            </ul>
-                       </div>
-                    </div>
-                 </div>
+            <div class="box-wrapper">
+              <div class="box-head">
+                <h1 id="heading">Orders</h1><hr id="order-heading">
               </div>
+              <div class="order-details-wrapper">
+                <div class="not-confirmed-orders">
+                  <h2 id="orders-to-be-conifrmed-heading">Orders to be confirmed</h2>
+                  <div class="orders">
+                    <div class="not-confirmed-order-details-wrapper">
+                      <div class="user-details-wrapper">
+                        <ul class="user-details">
+                          <li id="username">Username1</li>
+                          <li>Address</li>
+                          <li id="date">Date</li>                          
+                        </ul>
+                      </div>
+                      <div class="product-details-wrapper">
+                        <p id="products-heading">Products</p>
+                        <ul class="product-details">
+                          <li>product : price</li>
+                          <li>product : price</li>                          
+                        </ul>
+                        <p id="total-price-heading">Total Price: </p>
+                      </div>
+                      <div class="accept-decline-buttons">
+                        <button class="accept-button">accept</button>
+                        <button class="deny-button">decline</button>
+                      </div>
+                    </div>
+
+                    <div class="not-confirmed-order-details-wrapper">
+                      <div class="user-details-wrapper">
+                        <ul class="user-details">
+                          <li id="username">Username2</li>
+                          <li>Address</li>
+                          <li id="date">Date</li>                          
+                        </ul>
+                      </div>
+                      <div class="product-details-wrapper">
+                        <p id="products-heading">Products</p>
+                        <ul class="product-details">
+                          <li>product : price</li>
+                          <li>product : price</li>                          
+                        </ul>
+                        <p id="total-price-heading">Total Price: </p>
+                      </div>
+                      <div class="accept-decline-buttons">
+                        <button class="accept-button">accept</button>
+                        <button class="deny-button">decline</button>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+                
+                <div class="confirmed-orders">
+                  <h2 id="conifrmed-orders-heading">Confirmed Orders</h2>
+                  <div class="orders">
+                    <div class="confirmed-order-details-wrapper">
+                      <div class="user-details-wrapper">
+                        <ul class="user-details">
+                          <li id="username">Username</li>
+                          <li>Address</li>
+                          <li id="date">Date</li>                          
+                        </ul>
+                      </div>
+                      <div class="product-details-wrapper">
+                        <p id="products-heading">Products</p>
+                        <ul class="product-details">
+                          <li>product : price</li>
+                          <li>product : price</li>                          
+                        </ul>
+                        <p id="total-price-heading">Total Price: </p>
+                      </div>
+                      <div class="accept-decline-buttons" style="display: none;">
+                        <button class="accept-button">accept</button>
+                        <button class="deny-button">decline</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
-        <script src="orders.js"></script>
-    </body>
+        </div>
+      </div>
+    </div>
+  <script src="orders.js"></script>
+</body>
+
 </html>
