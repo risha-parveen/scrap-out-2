@@ -158,39 +158,22 @@ html{
     margin-bottom: 3%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
-  /*
-  .box-head{
-    display: flex;
-    height: fit-content;
-    align-items: flex-start;
-    
-    background: #092a2bec;
-    color: #fff;
-    border-radius: 5px;
-    margin:0 0 10px 0;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
-    padding: 5px 20px;
-  }*/
 
   .shop-info{
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    min-height: 530px;
+    min-height: 580px;
     color: #1C3738;
     background: #ffffff;
     margin:0 0 10px 0;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
     padding: 5px 20px;
+    border-radius: 5px;
 }
 
 #shop-description{
     height:100px;
-}
-
-#photo-box{
-    margin-top: 10px;
-    background-color: #1C3738;
 }
 
 h3{

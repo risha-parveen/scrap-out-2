@@ -82,6 +82,6 @@ add_item_other_btn.addEventListener('click',()=>{
 save_btn.addEventListener('click',()=>{
     //const checkLocalStorage=async ()=>{
         localStorage.setItem("created",true)
-        window.location.href="cAcnt.html"
+        window.location.href="http://localhost:5000/collector/cAcnt/cAcnt.html"
      // }
 })
