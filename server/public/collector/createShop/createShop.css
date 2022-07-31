@@ -309,7 +309,8 @@ h3{
   box-shadow: 1px 1px 1px #999;
 }
 
-#add-icon{
+#add-icon,#add-icon-plastic,#add-icon-e-waste,#add-icon-paper,
+#add-icon-other,#add-icon-metal,#add-icon-glass{
   align-content: center;
   margin-top: 15px;
   margin-left: 10px;
@@ -349,4 +350,8 @@ h3{
   outline:none;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+p{
+  margin:0;
 }
