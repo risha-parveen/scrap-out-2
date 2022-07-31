@@ -69,9 +69,16 @@ const renderData=async()=>{
     mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     yyyy = today.getFullYear();
     today=yyyy+'-'+mm+'-'+dd
+    if(selectedDate===''){
+      alert('please select date')
+    }
+    else if(selectedDate!=='' && selectedDate<today){
+      alert('not possible to select days before today')
+    }
     if(selectedDate!=='' && selectedDate>=today){
+      
       confirmButton.innerHTML='Confirmed!'
-      alert('Your order has been confirmed.\nWe will notify you when your slot is booked')
+      alert('Your order has been confirmed. We will notify you when your slot is booked')
     }
   })
 }
