@@ -117,11 +117,16 @@ router.post('/get_selected_collector',auth,async(req,res)=>{
 })
 
 router.post('/get_confirmation',auth,async(req,res)=>{
+  console.log(req.user.username)
   username=req.user.username
   shopname=req.body.shopname
   try{
     result=await list_db.find({shopname:shopname})
-    console.log(result[0])
+    confirmation=result[0].orders[0][username].pop().confirm
+    res.status(200).send({
+      confirm:confirmation,
+      success:true
+    })
 
   }catch(err){
     console.log(err)

@@ -1,4 +1,4 @@
-
+confirmationTag=document.getElementById('confirmation-tag')
 
 
 let token=null
@@ -13,7 +13,9 @@ const checklocalstorage=async ()=>{
       shopname:localStorage.getItem('current_shop')
     }
     response=await getConfirmation(contents,token)
-    console.log(response)
+    if(response.success===true && response.confirm===true){
+      confirmationTag.innerHTML='Order confirmed!!!'
+    }
   }
 }
 
