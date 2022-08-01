@@ -1,3 +1,4 @@
+
 let paper_btn=document.getElementById('paper-btn');
 let e_waste_btn=document.getElementById('e-waste-btn');
 let plastic_btn=document.getElementById('plastic-btn');
@@ -90,7 +91,7 @@ save_btn.addEventListener('click',()=>{
 const addForPaper=()=>{
     for(let i=0;i<add_icon_paper.children.length;i++){
         console.log(add_icon_paper.children[i])
-        add_icon_paper.children[i].addEventListener('click',()=>{
+        add_icon_paper.children[i].addEventListener('click',async()=>{
             console.log(add_icon_paper.children[i])
             current=add_icon_paper.children[i]
             item=current.parentNode.parentNode.children[0].value
@@ -108,7 +109,15 @@ const addForPaper=()=>{
                     ${priceNode}
                 </div>
             `
-            current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            contents={
+                category:'Paper',
+                item:item,
+                price:price
+            }
+            response=await addProducts(contents,token)
+            if(response.success===true)
+                current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            else alert('Something went wrong')
         })
     }
 }
@@ -117,7 +126,7 @@ const addForEWaste=()=>{
     
     for(let i=0;i<add_icon_e_waste.children.length;i++){
         console.log(add_icon_e_waste.children[i])
-        add_icon_e_waste.children[i].addEventListener('click',()=>{
+        add_icon_e_waste.children[i].addEventListener('click',async()=>{
             console.log(add_icon_e_waste.children[i])
             current=add_icon_e_waste.children[i]
             item=current.parentNode.parentNode.children[0].value
@@ -131,11 +140,19 @@ const addForEWaste=()=>{
             `
             tagNode=`
                 <div style="display:flex;flex-direction:row; justify-content:space-around">
-                    ${priceNode}
                     ${itemNode}
+                    ${priceNode}
                 </div>
             `
-            current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            contents={
+                category:'E-Waste',
+                item:item,
+                price:price
+            }
+            response=await addProducts(contents,token)
+            if(response.success===true)
+                current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            else alert('Something went wrong')
         })
     }
 }
@@ -143,7 +160,7 @@ const addForEWaste=()=>{
 const addForPlastic=()=>{
     for(let i=0;i<add_icon_plastic.children.length;i++){
         console.log(add_icon_plastic.children[i])
-        add_icon_plastic.children[i].addEventListener('click',()=>{
+        add_icon_plastic.children[i].addEventListener('click',async()=>{
             console.log(add_icon_plastic.children[i])
             current=add_icon_plastic.children[i]
             item=current.parentNode.parentNode.children[0].value
@@ -157,21 +174,29 @@ const addForPlastic=()=>{
             `
             tagNode=`
                 <div style="display:flex;flex-direction:row; justify-content:space-around">
-                    ${priceNode}
                     ${itemNode}
+                    ${priceNode}
                 </div>
             `
-            current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            contents={
+                category:'Plastic',
+                item:item,
+                price:price
+            }
+            response=await addProducts(contents,token)
+            if(response.success===true)
+                current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            else alert('Something went wrong')
         })
     }
 }
 
 const addForGlass=()=>{
-    for(let i=0;i<add_icon_e_waste.children.length;i++){
-        console.log(add_icon_e_waste.children[i])
-        add_icon_e_waste.children[i].addEventListener('click',()=>{
-            console.log(add_icon_e_waste.children[i])
-            current=add_icon_e_waste.children[i]
+    for(let i=0;i<add_icon_glass.children.length;i++){
+        console.log(add_icon_glass.children[i])
+        add_icon_glass.children[i].addEventListener('click',async()=>{
+            console.log(add_icon_glass.children[i])
+            current=add_icon_glass.children[i]
             item=current.parentNode.parentNode.children[0].value
             price=current.parentNode.parentNode.children[1].value
             console.log(current.parentNode.parentNode.parentNode.parentNode, item,price)
@@ -183,11 +208,20 @@ const addForGlass=()=>{
             `
             tagNode=`
                 <div style="display:flex;flex-direction:row; justify-content:space-around">
-                    ${priceNode}
                     ${itemNode}
+                    ${priceNode}
+                    
                 </div>
             `
-            current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            contents={
+                category:'Glass',
+                item:item,
+                price:price
+            }
+            response=await addProducts(contents,token)
+            if(response.success===true)
+                current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            else alert('Something went wrong')
         })
     }
 }
@@ -195,7 +229,7 @@ const addForGlass=()=>{
 const addForOthers=()=>{
     for(let i=0;i<add_icon_other.children.length;i++){
         console.log(add_icon_other.children[i])
-        add_icon_other.children[i].addEventListener('click',()=>{
+        add_icon_other.children[i].addEventListener('click',async()=>{
             console.log(add_icon_other.children[i])
             current=add_icon_other.children[i]
             item=current.parentNode.parentNode.children[0].value
@@ -209,11 +243,19 @@ const addForOthers=()=>{
             `
             tagNode=`
                 <div style="display:flex;flex-direction:row; justify-content:space-around">
-                    ${priceNode}
                     ${itemNode}
+                    ${priceNode}
                 </div>
             `
-            current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            contents={
+                category:'Others',
+                item:item,
+                price:price
+            }
+            response=await addProducts(contents,token)
+            if(response.success===true)
+                current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            else alert('Something went wrong')
         })
     }
 }
@@ -221,7 +263,7 @@ const addForOthers=()=>{
 const addForMetal=()=>{
     for(let i=0;i<add_icon_metal.children.length;i++){
         console.log(add_icon_metal.children[i])
-        add_icon_metal.children[i].addEventListener('click',()=>{
+        add_icon_metal.children[i].addEventListener('click',async()=>{
             console.log(add_icon_metal.children[i])
             current=add_icon_metal.children[i]
             item=current.parentNode.parentNode.children[0].value
@@ -235,11 +277,20 @@ const addForMetal=()=>{
             `
             tagNode=`
                 <div style="display:flex;flex-direction:row; justify-content:space-around">
-                    ${priceNode}
                     ${itemNode}
+                    ${priceNode}
                 </div>
             `
-            current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+
+            contents={
+                category:'Metal',
+                item:item,
+                price:price
+            }
+            response=await addProducts(contents,token)
+            if(response.success===true)
+                current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
+            else alert('Something went wrong')
         })
     }
 }
@@ -261,6 +312,26 @@ const checklocalstorage=()=>{
     else{
         window.location.href="http://localhost:5000/collector/clogin/clogin.html"
     }
+}
+
+const addProducts=async(contents,token)=>{
+    try{
+        const response=await fetch('/collector/post/add_products',{
+          method:'POST',
+            headers:{
+                'Accept':'application/json',
+                'Content-Type':'application/json',
+                'Authorization':'Bearer '+token
+            },
+            body:JSON.stringify(contents)
+        })
+        const result=await response.json()
+        console.log(result)
+        return result
+      }
+      catch(e){
+        console.log(e)
+      }
 }
 
 window.onload=checklocalstorage()
