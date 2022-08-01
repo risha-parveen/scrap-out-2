@@ -121,14 +121,7 @@ router.post('/get_confirmation',auth,async(req,res)=>{
   shopname=req.body.shopname
   try{
     result=await list_db.find({shopname:shopname})
-    currentOrders=result[0].orders
-    for(let i in currentOrders){
-      currentUser=Object.keys(currentOrders[i])[0]
-      if(currentUser===username){
-        details=currentOrders[i][currentUser].pop()
-        res.status(200).send(details)
-      }
-    }
+    console.log(result[0])
 
   }catch(err){
     console.log(err)

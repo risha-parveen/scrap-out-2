@@ -61,4 +61,35 @@ router.post('/add_products',auth,async(req,res)=>{
   }
 })
 
+router.post('/change_confirm',auth,async(req,res)=>{
+  shopname=req.collector.shopname 
+  confirmation=req.body.confirmation
+  username=req.body.username
+  try{
+    result=await list_db.find({shopname:shopname})
+    last=result[0].orders[0][username].pop()
+    last.confirm=confirmation
+    result[0].orders[0][username].push(last)
+    try{
+      response=await list_db.replaceOne({shopname:shopname},result[0])
+      res.status(200).send({
+        success:true,
+        action:"confirmation changed"
+      })
+    }catch(err){
+      console.log(err)
+      res.status(500).send({
+        success:false,
+        action:"something went wrong"
+      })
+    }
+  }catch(err){
+    console.log(err)
+    res.status(500).send({
+      success:false,
+      action:"something went wrong"
+    })
+  }
+})
+
 module.exports=router;

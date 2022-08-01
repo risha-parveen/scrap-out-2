@@ -55,6 +55,8 @@ router.post("/sign_up", async (req, res) => {
               address:"",
               items:[]
             };
+
+            let order=await order_db.insertMany(new_order)
             res.status(200).send({
               success: true,
               user_id: user[0]._id,

@@ -77,6 +77,8 @@ const EventListenerForAddButton=(shopname)=>{
           addButton[i].innerHTML='Added!'
           count++
           updateViewCart(count,price)
+          localStorage.removeItem('current_shop')
+          localStorage.setItem('current_shop',shopname)
         }
       }catch(error){
         console.log(error)

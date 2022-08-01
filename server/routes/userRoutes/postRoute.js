@@ -60,6 +60,8 @@ router.post('/edit_order',auth,async(req,res)=>{
       order[0].items.push(item)
 
       console.log(order)
+      order[0].shopname=req.body.shopname
+      order[0].address=req.body.address
       new_order=order
 
       result=await order_db.replaceOne({username:username},order[0])
@@ -86,6 +88,7 @@ router.post('/confirm_order',auth,async(req,res)=>{
     shopname=result[0].shopname
     try{
       list_result=await list_db.find({shopname:shopname})
+      console.log
       items=result[0].items
       console.log(items.push({'confirm':false, 'date':date}))
       console.log(items)

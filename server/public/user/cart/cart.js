@@ -83,7 +83,6 @@ const renderData=async()=>{
           if(response.success===true){
             window.location.href="http://localhost:5000/user/summary/summary.html"
             alert('Your order has been confirmed. We will notify you when your slot is booked')
-            
           }
           else{
             alert('Something went wrong. Try again ')
