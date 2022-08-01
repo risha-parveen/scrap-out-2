@@ -17,11 +17,11 @@ console.log(categoryInfo[0].innerHTML)
 
 
 order_link.addEventListener('click',()=>{
-    window.location.href="http://localhost:5000/collector/orders/orders.html"
+    window.location.href="http://scrapout.me/collector/orders/orders.html"
 })
 
 acnt_link.addEventListener('click',()=>{
-    window.location.href="http://localhost:5000/collector/cAcnt/cAcnt.html"
+    window.location.href="http://scrapout.me/collector/cAcnt/cAcnt.html"
 })
 
 

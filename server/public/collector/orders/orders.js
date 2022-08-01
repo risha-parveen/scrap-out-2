@@ -12,7 +12,7 @@ notConfirmedOrderDiv=document.getElementsByClassName('orders')[0]
 
 
 order_link.addEventListener('click',()=>{
-    window.location.href="http://localhost:5000/collector/orders/orders.html"
+    window.location.href="http://scrapout.me/collector/orders/orders.html"
 })
 
 
@@ -108,7 +108,7 @@ const renderData=async()=>{
 const checklocalstorage=()=>{
   token=localStorage.getItem('token')
   if(!token){
-    window.location.href="http://localhost:5000/collector/clogin/clogin.html"
+    window.location.href="http://scrapout.me/collector/clogin/clogin.html"
   }
   else renderData()
 }
