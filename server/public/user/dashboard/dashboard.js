@@ -1,4 +1,4 @@
-let logout_button=document.getElementById('logout')
+let logout_button=document.getElementById('logout-button')
 let category=document.getElementsByClassName('category')
 let container_wrapper=document.getElementById('container-wrapper')
 
