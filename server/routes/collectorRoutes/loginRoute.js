@@ -64,11 +64,11 @@ router.post("/sign_up",async(req,res)=>{
                     let product_info={
                         _id: collector_id,
                         shopname: req.body.shopname,
-                        e_waste:[{}],
-                        paper:[{}],
-                        plastic:[{}],
-                        metal:[{}],
-                        others:[{}]
+                        e_waste:[],
+                        paper:[],
+                        plastic:[],
+                        metal:[],
+                        others:[]
 
                     };
                     await order_list_db.insertMany(order_list_info);

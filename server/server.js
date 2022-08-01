@@ -8,6 +8,7 @@ const collectorLoginRoute=require('./routes/collectorRoutes/loginRoute')
 const userGetRoute=require('./routes/userRoutes/getRoute')
 const collectorGetRoute=require('./routes/collectorRoutes/getRoute')
 const userPostRoute=require('./routes/userRoutes/postRoute')
+const collectorPostRoute=require('./routes/collectorRoutes/postRoute')
 const collectorAuth=require('./middleware/collectorAuth')
 //const auth=require('./middleware/userAuth')
 
@@ -33,6 +34,8 @@ app.use('/user',userGetRoute)
 app.use('/user/post',userPostRoute)
 
 app.use('/collector',collectorGetRoute)
+
+app.use('/collector/post',collectorPostRoute)
 
 app.listen(5000,()=>{
   console.log('server listening')

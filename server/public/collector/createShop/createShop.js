@@ -109,7 +109,6 @@ const addForPaper=()=>{
                 </div>
             `
             current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
-            addForEWaste()
         })
     }
 }
@@ -137,7 +136,6 @@ const addForEWaste=()=>{
                 </div>
             `
             current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
-            addForEWaste()
         })
     }
 }
@@ -164,7 +162,6 @@ const addForPlastic=()=>{
                 </div>
             `
             current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
-            addForEWaste()
         })
     }
 }
@@ -191,7 +188,6 @@ const addForGlass=()=>{
                 </div>
             `
             current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
-            addForEWaste()
         })
     }
 }
@@ -218,7 +214,6 @@ const addForOthers=()=>{
                 </div>
             `
             current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
-            addForEWaste()
         })
     }
 }
@@ -245,7 +240,6 @@ const addForMetal=()=>{
                 </div>
             `
             current.parentNode.parentNode.parentNode.parentNode.innerHTML+=tagNode
-            addForEWaste()
         })
     }
 }
