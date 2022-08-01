@@ -6,7 +6,7 @@ let token=null
 const checklocalstorage=async ()=>{
   token=localStorage.getItem('token')
   if(!token){
-    window.location.href="http://localhost:5000/user/login/login.html"
+    window.location.href="http://scrapout.me/user/login/login.html"
   }
   else{
     contents={

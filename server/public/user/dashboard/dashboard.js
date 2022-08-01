@@ -6,7 +6,7 @@ let token=null
 
 logout_button.addEventListener('click',()=>{
   localStorage.clear()
-  window.location.href="http://localhost:5000/index.html"
+  window.location.href="http://scrapout.me/index.html"
 })
 
 for(let categ=0;categ<category.length;categ++){
@@ -15,7 +15,7 @@ for(let categ=0;categ<category.length;categ++){
     console.log(current_category)
     localStorage.removeItem('current_category')
     localStorage.setItem('current_category',current_category)
-    const url=new URL('http://localhost:5000/user/shoplist/shoplist.html')
+    const url=new URL('http://scrapout.me/user/shoplist/shoplist.html')
     url.searchParams.delete('category')
     url.searchParams.append('category',current_category)
     const newUrl=url.toString()
@@ -27,7 +27,7 @@ for(let categ=0;categ<category.length;categ++){
 const checkLocalStorage=()=>{
   token=localStorage.getItem('token')
   if(!token){
-    window.location.href="http://localhost:5000/index.html"
+    window.location.href="http://scrapout.me/index.html"
   }
 }
 

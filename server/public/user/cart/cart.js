@@ -81,7 +81,7 @@ const renderData=async()=>{
       try{
         response=await confirmOrder(contents,token)
           if(response.success===true){
-            window.location.href="http://localhost:5000/user/summary/summary.html"
+            window.location.href="http://scrapout.me/user/summary/summary.html"
             alert('Your order has been confirmed. We will notify you when your slot is booked')
           }
           else{
@@ -100,7 +100,7 @@ const checkLocalStorage=()=>{
   if(token){
     renderData()
   }else{
-    window.location.href="http://localhost:5000/index.html"
+    window.location.href="http://scrapout.me/index.html"
   }
 }
 

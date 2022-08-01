@@ -18,7 +18,7 @@ let count=0
 let Totalprice=0
 
 //viewCartButton.addEventListener('click',()=>{
-//  window.location.href="http://localhost:5000/user/cart/cart.html"
+//  window.location.href="http://scrapout.me/user/cart/cart.html"
 //})
 
 
@@ -175,7 +175,7 @@ const renderData=async(shop,shopProducts)=>{
       </div>
   `
   productWrapper.lastElementChild.lastElementChild.lastElementChild.addEventListener('click',()=>{
-    window.location.href="http://localhost:5000/user/cart/cart.html"
+    window.location.href="http://scrapout.me/user/cart/cart.html"
   })
 
   //expansionEventListener()
